@@ -3,7 +3,7 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pbg-vcell-fvsolver"
+name = "viva-vcell-fvsolver"
 version = "0.1.0"
 description = "process-bigraph wrapper around pyvcell / pyvcell-fvsolver for 3D reaction-diffusion simulations"
 readme = "README.md"
