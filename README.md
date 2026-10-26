@@ -1,4 +1,4 @@
-# pbg-vcell-fvsolver
+# viva-vcell-fvsolver
 
 A [process-bigraph](https://github.com/vivarium-collective/process-bigraph)
 wrapper around [`pyvcell`](https://github.com/virtualcell/pyvcell) and
@@ -6,7 +6,7 @@ wrapper around [`pyvcell`](https://github.com/virtualcell/pyvcell) and
 VCell's native finite-volume 3D reaction-diffusion PDE solver as a PBG
 `Process`.
 
-**[View Interactive Demo Report](https://vivarium-collective.github.io/pbg-vcell-fvsolver/)** — Gaussian-pulse diffusion, an A→B→C cascade, and a two-source binding reaction, with PyVista vtk.js 3D viewers, Plotly charts, and bigraph architecture diagrams.
+**[View Interactive Demo Report](https://vivarium-collective.github.io/viva-vcell-fvsolver/)** — Gaussian-pulse diffusion, an A→B→C cascade, and a two-source binding reaction, with PyVista vtk.js 3D viewers, Plotly charts, and bigraph architecture diagrams.
 
 ## What it does
 
