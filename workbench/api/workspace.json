@@ -1,0 +1,1 @@
+{"name": "viva-vcell-fvsolver", "description": "", "imports": {}, "investigations": [{"name": "vcell-finite-volume-reaction-diffusion", "title": "Vcell finite volume reaction diffusion", "status": "planning", "description": "Scaffolded from 2 composite generator(s) via `investigation-from-wrapper`. Fill in the narrative."}]}
