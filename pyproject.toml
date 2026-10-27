@@ -8,15 +8,18 @@ version = "0.1.0"
 description = "process-bigraph wrapper around pyvcell / pyvcell-fvsolver for 3D reaction-diffusion simulations"
 readme = "README.md"
 license = {text = "MIT"}
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 authors = [{name = "Eran Agmon"}]
 dependencies = [
     "process-bigraph>=0.0.30",
     "bigraph-schema>=0.0.60",
-    "pbg-superpowers",
+    "viva-superpowers",
     "numpy>=1.26",
-    "pyvcell>=0.2",
+    "pyvcell[io,viz]>=0.5",
     "pyvcell-fvsolver>=0.1",
+    "libvcell",
+    "antimony",
+    "python-libsbml",
     "pyyaml",
 ]
 
@@ -30,7 +33,7 @@ test = [
 ]
 
 [tool.uv.sources]
-pbg-superpowers = { git = "https://github.com/vivarium-collective/pbg-superpowers.git", branch = "main" }
+viva-superpowers = { git = "https://github.com/vivarium-collective/viva-superpowers.git", branch = "main" }
 
 [tool.setuptools.packages.find]
 include = ["pbg_vcell_fvsolver*"]
