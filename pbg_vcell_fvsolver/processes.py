@@ -60,6 +60,9 @@ class VCellFVProcess(Process):
                              species fall back to init_conc=0, diff_coef=0.
         track_species:       Subset of species to emit as fields/means.
                              Empty -> all model species.
+        assume_units:        Units for an Antimony model that declares none
+                             (pyvcell >= 0.5 requires this): 'vcell' (uM, um, s)
+                             or 'sbml_l2'.
         quiet:               Suppress JVM/solver stdout during pre-run.
     """
 
@@ -86,6 +89,7 @@ class VCellFVProcess(Process):
             '_type': 'list[string]',
             '_default': [],
         },
+        'assume_units': {'_type': 'string', '_default': 'vcell'},
         'quiet': {'_type': 'boolean', '_default': True},
     }
 
@@ -127,7 +131,9 @@ class VCellFVProcess(Process):
 
         saved = _suppress_jvm_noise() if self.config['quiet'] else None
         try:
-            biomodel = vc.load_antimony_str(self.config['antimony'])
+            biomodel = vc.load_antimony_str(
+                self.config['antimony'],
+                assume_units=self.config['assume_units'] or None)
 
             ex = (float(self.config['extent_x']),
                   float(self.config['extent_y']),
