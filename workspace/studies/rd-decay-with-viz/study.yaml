@@ -1,0 +1,127 @@
+schema_version: 4
+name: rd-decay-with-viz
+title: Rd decay with viz
+created: '2026-10-27'
+status: planned
+execution_status: planned
+verdict:
+phase: Design
+question: TBD — what question does this study answer?
+experiment: TBD — describe what pbg_vcell_fvsolver.composites.rd-decay-with-viz is expected to demonstrate.
+description: Wraps the `pbg_vcell_fvsolver.composites.rd-decay-with-viz` composite generator as a study. Fill in.
+baseline:
+- name: baseline
+  composite: pbg_vcell_fvsolver.composites.rd-decay-with-viz
+  params: {}
+variants: []
+behavior_tests:
+- name: rd-decay-with-viz-behaves
+  classification: primary
+  description: TBD — plain-language statement of the expected behavior.
+  measure:
+    kind: derived_scalar
+    field: TBD
+  pass_if:
+    op: <
+    value:
+  requires_simulation: baseline
+pipeline_gate:
+  prerequisites: []
+  enables: []
+  gate_evaluator:
+    result: blocked
+    blocked_by:
+    - rd-decay-with-viz-behaves
+    evaluated_by: code
+    diverges_from_authored: false
+canonical_runs:
+- name: default
+  script: studies/rd-decay-with-viz/sims/run.py
+  args: []
+  label: rd-decay-with-viz
+  default: true
+visualizations:
+- name: rd-decay-with-viz-world
+  view: world
+  status: stub
+  description: 'Fill in: the environment/state the study runs in.'
+- name: rd-decay-with-viz-mechanism
+  view: mechanism
+  status: stub
+  description: 'Fill in: the mechanism/trajectory that drives the result.'
+- name: rd-decay-with-viz-decision
+  view: decision
+  phase_map: true
+  grid_artifact: studies/rd-decay-with-viz/grid/phase_map.parquet
+  status: stub
+  description: 'Fill in: phase map identifying PASS and FAILURE regions across a swept grid (not a single run). Built by sims/run.py''s grid sweep; persisted to grid_artifact.'
+findings: []
+confidence: Planned
+report:
+  verdict:
+result:
+runs:
+- name: pbg_vcell_fvsolver.composites.rd-decay-with-viz__1793127307__386827
+  status: completed
+  timestamp: 1793127310.126893
+  emitter:
+    kind: unknown
+  env_id: 84628ba91b77daec
+  params: '{}'
+  computed_outcomes:
+    _status: store_unresolved
+  provenance:
+    params:
+      n_steps:
+        value: 10
+        source: resolved
+    params_captured_at: '2026-10-27'
+    params_source: dashboard-runner
+  outcomes:
+    rd-decay-with-viz-behaves:
+      result: SKIP
+      evaluated_by: agent
+      note: observable 'TBD' not resolvable
+      auto_evaluated: true
+- name: pbg_vcell_fvsolver.composites.rd-decay-with-viz__1793127287__d51632
+  status: failed
+  timestamp: 1793127289.875592
+  emitter:
+    kind: unknown
+  env_id: 84628ba91b77daec
+  params: '{}'
+  computed_outcomes:
+    _status: store_unresolved
+- name: pbg_vcell_fvsolver.composites.rd-decay-with-viz__1793127331__64dac1
+  status: completed
+  timestamp: 1793127334.304178
+  emitter:
+    kind: unknown
+  env_id: 84628ba91b77daec
+  params: '{}'
+  computed_outcomes:
+    rd-decay-with-viz-behaves:
+      evaluated_by: agent
+      reason: observable 'TBD' not resolvable
+      reconcile: no_authored
+  provenance:
+    params:
+      n_steps:
+        value: 1
+        source: resolved
+    params_captured_at: '2026-10-27'
+    params_source: dashboard-runner
+  outcomes:
+    rd-decay-with-viz-behaves:
+      result: SKIP
+      evaluated_by: agent
+      note: observable 'TBD' not resolvable
+      auto_evaluated: true
+simulation_set:
+- name: baseline-baseline
+  kind: single
+  base_model: pbg_vcell_fvsolver.composites.rd-decay-with-viz
+  is_baseline: true
+  status: ran
+  pass_fail_tests:
+  - rd-decay-with-viz-behaves
