@@ -1,7 +1,6 @@
 {
   "mode": "snapshot",
-  "smsApiBase": "",
   "repo": "https://github.com/vivarium-collective/viva-vcell-fvsolver",
-  "commit": "f041c0f6312dc2707eb960b8d047d933cab46770",
+  "commit": "745a9920df5cdb8cbcaf027df5bca047b289e80e",
   "generated_from_ref": "main"
 }

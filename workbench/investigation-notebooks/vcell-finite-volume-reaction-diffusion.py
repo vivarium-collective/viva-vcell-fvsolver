@@ -260,7 +260,7 @@ def _render_one(address, config, runs_db, study_yaml, overrides=None):
 
 # **Composite `pbg_vcell_fvsolver.composites.rd-decay-with-viz`** — `spec_pbg_vcell_fvsolver_composites_rd_decay_with_viz` (static spec file, editable dict)
 
-from viva_superpowers.composite_spec import load_spec
+from discovery_engine.composite_spec import load_spec
 spec_pbg_vcell_fvsolver_composites_rd_decay_with_viz = load_spec(REPO / 'pbg_vcell_fvsolver/composites/rd-decay-with-viz.composite.yaml')
 describe_spec(spec_pbg_vcell_fvsolver_composites_rd_decay_with_viz)
 
@@ -311,7 +311,7 @@ if RERUN:
     from process_bigraph import Composite
     try:
         with quiet():  # keep per-step stdout out of the notebook
-            from viva_superpowers.composite_spec import build_composite_from_spec
+            from discovery_engine.composite_spec import build_composite_from_spec
             _comp = build_composite_from_spec(spec_pbg_vcell_fvsolver_composites_rd_decay_with_viz, {'interval': INTERVAL_baseline}, core=core)
             _comp.run(STEPS_baseline)
         print('ran', 'baseline', f'(pbg_vcell_fvsolver.composites.rd-decay-with-viz) for', STEPS_baseline, 'steps')
@@ -371,7 +371,7 @@ _save_viz('rd-decay-with-viz', 'rd-decay-with-viz-decision', _render_one('', {},
 
 # **Composite `pbg_vcell_fvsolver.composites.rd-decay-demo`** — `spec_pbg_vcell_fvsolver_composites_rd_decay_demo` (static spec file, editable dict)
 
-from viva_superpowers.composite_spec import load_spec
+from discovery_engine.composite_spec import load_spec
 spec_pbg_vcell_fvsolver_composites_rd_decay_demo = load_spec(REPO / 'pbg_vcell_fvsolver/composites/rd-decay-demo.composite.yaml')
 describe_spec(spec_pbg_vcell_fvsolver_composites_rd_decay_demo)
 
@@ -422,7 +422,7 @@ if RERUN:
     from process_bigraph import Composite
     try:
         with quiet():  # keep per-step stdout out of the notebook
-            from viva_superpowers.composite_spec import build_composite_from_spec
+            from discovery_engine.composite_spec import build_composite_from_spec
             _comp = build_composite_from_spec(spec_pbg_vcell_fvsolver_composites_rd_decay_demo, {'interval': INTERVAL_baseline}, core=core)
             _comp.run(STEPS_baseline)
         print('ran', 'baseline', f'(pbg_vcell_fvsolver.composites.rd-decay-demo) for', STEPS_baseline, 'steps')
